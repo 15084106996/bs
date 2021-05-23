@@ -114,16 +114,19 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public long getTimeTotal(String stid) {
+    public long getTimeTotal(String idOrName, String stid) {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         long count = 0;
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select count(*) as total from student,onlinetime,submissions " +
-                    "where student.stid=onlinetime.stid and submissions.subid=onlinetime.subid and student.stid=?");
+            ps = conn.prepareStatement("select count(*) as total from course,student,onlinetime,submissions where " +
+                    "student.stid=onlinetime.stid and submissions.subid=onlinetime.subid and course.cid=onlinetime.cid and " +
+                    "student.stid=?  and (course.cid=? or course.cname like concat('%',?,'%'))");
             ps.setString(1, stid);
+            ps.setString(2, idOrName);
+            ps.setString(3, idOrName);
             rs = ps.executeQuery();
             if (rs.next()) {
                 count = rs.getLong("total");
@@ -139,19 +142,21 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<OnlineTime> findStudentTime(String stid, long pageNum, String pageSize) {
+    public List<OnlineTime> findStudentTime(String stid,String idOrName, long pageNum, String pageSize) {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<OnlineTime> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select student.stid as stid,stname,logintime,logouttime,onlinetime,sumtime," +
-                    "submissions,sumsubmissions from student,onlinetime,submissions where student.stid=onlinetime.stid " +
-                    "and submissions.subid=onlinetime.subid and student.stid=? limit ?,?");
+            ps = conn.prepareStatement("select student.stid as stid,stname,logintime,logouttime,onlinetime,sumtime,submissions,sumsubmissions,course.cid,cname" +
+                    " from course,student,onlinetime,submissions where student.stid=onlinetime.stid and submissions.subid=onlinetime.subid " +
+                    "and course.cid=onlinetime.cid and student.stid=?  and (course.cid=? or course.cname like concat('%',?,'%')) limit ?,?");
             ps.setString(1, stid);
-            ps.setLong(2, pageNum);
-            ps.setLong(3, Long.valueOf(pageSize));
+            ps.setString(2, idOrName);
+            ps.setString(3, idOrName);
+            ps.setLong(4, pageNum);
+            ps.setLong(5, Long.valueOf(pageSize));
             rs = ps.executeQuery();
             while (rs.next()) {
                 OnlineTime onlineTime = new OnlineTime();
@@ -163,6 +168,8 @@ public class StudentDaoImpl implements StudentDao {
                 onlineTime.setSumtime(rs.getString("sumtime"));
                 onlineTime.setSubmissions(rs.getString("submissions"));
                 onlineTime.setSumsubmissions(rs.getString("sumsubmissions"));
+                onlineTime.setCid(rs.getString("cid"));
+                onlineTime.setCname(rs.getString("cname"));
                 list.add(onlineTime);
             }
         } catch (Exception e) {
@@ -184,10 +191,10 @@ public class StudentDaoImpl implements StudentDao {
         List<Homework> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,kind,htid,score,sumscore,classranking,graderanking" +
-                    " from homework,course,student,score,ranking where course.cid=homework.cid and student.stid=homework.stid" +
-                    " and score.sid=homework.sid and ranking.rid=homework.rid and student.stid=? and (course.cid=? or" +
-                    " course.cname like concat('%',?,'%')) limit ?,?");
+            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,kind,htid,score,sumscore,classranking,graderanking " +
+                    "from homework,course,student,score,ranking where course.cid=homework.cid and student.stid=homework.stid " +
+                    "and score.sid=homework.sid and ranking.rid=homework.rid and student.stid=? and (course.cid=? or " +
+                    "course.cname like concat('%',?,'%')) limit ?,? ");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
             ps.setString(3, idOrName);
@@ -259,8 +266,8 @@ public class StudentDaoImpl implements StudentDao {
         try {
             conn = DBUtils.getInstance().getConnection();
             ps = conn.prepareStatement("select topkind,topname,toptext,kname,ktext,score,sumscore,submissions,details,opinion" +
-                    " from homeworktopic,homework,knowledge,score,submissions,details,topic " +
-                    "where homework.htid=homeworktopic.htid and knowledge.kid=homeworktopic.kid and score.sid=homeworktopic.sid " +
+                    " from homeworktopic,knowledge,score,submissions,details,topic " +
+                    "where knowledge.kid=homeworktopic.kid and score.sid=homeworktopic.sid " +
                     "and submissions.subid=homeworktopic.subid and details.did=homeworktopic.did and topic.topid=homeworktopic.topid " +
                     "and homeworktopic.htid=? limit ?,?");
             ps.setString(1, htid);
@@ -302,7 +309,7 @@ public class StudentDaoImpl implements StudentDao {
         try {
             conn = DBUtils.getInstance().getConnection();
             ps = conn.prepareStatement("select count(*) as total from homeworktopic,homework,knowledge,score,submissions,details,topic" +
-                    " where homework.htid=homeworktopic.htid and knowledge.kid=homeworktopic.kid and score.sid=homeworktopic.sid " +
+                    " where knowledge.kid=homeworktopic.kid and score.sid=homeworktopic.sid " +
                     "and submissions.subid=homeworktopic.subid and details.did=homeworktopic.did and topic.topid=homeworktopic.topid " +
                     "and homeworktopic.htid=?");
             ps.setString(1, htid);
@@ -410,7 +417,7 @@ public class StudentDaoImpl implements StudentDao {
         List<Test> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,ttid,kind,score," +
+            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,test.ttid as ttid,kind,score," +
                     "sumscore,classranking,graderanking,ratio from test,score,course,student,ranking where test.cid=course.cid " +
                     "and test.sid=score.sid and test.stid=student.stid and test.rid=ranking.rid " +
                     "and student.stid=? and (course.cid=? or course.cname like concat('%',?,'%')) limit ?,?");
@@ -432,6 +439,7 @@ public class StudentDaoImpl implements StudentDao {
                 test.setSumscore(rs.getString("sumscore"));
                 test.setClassranking(rs.getString("classranking"));
                 test.setGraderanking(rs.getString("graderanking"));
+                test.setTtid(rs.getString("ttid"));
                 list.add(test);
             }
         } catch(Exception e)
@@ -460,6 +468,151 @@ public class StudentDaoImpl implements StudentDao {
             ps.setString(1, stid);
             ps.setString(2, idOrName);
             ps.setString(3, idOrName);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getLong("total");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtils.getInstance().close(rs);
+            DBUtils.getInstance().close(ps);
+            DBUtils.getInstance().close(conn);
+        }
+        return count;
+    }
+
+    @Override
+    public List<Topic> findStudentTestTopic(String ttid, long pageNum, String pageSize) {
+        Connection conn =null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<Topic> list = new ArrayList<>();
+        try {
+            conn = DBUtils.getInstance().getConnection();
+            ps = conn.prepareStatement("select topkind,topname,toptext,kname,ktext,score,sumscore,submissions,details,opinion " +
+                    "from testtopic,knowledge,score,submissions,details,topic where " +
+                    "knowledge.kid=testtopic.kid and score.sid=testtopic.sid and submissions.subid=testtopic.subid and " +
+                    "details.did=testtopic.did and topic.topid=testtopic.topid and testtopic.ttid=? limit ?,?");
+            ps.setString(1, ttid);
+            ps.setLong(2, pageNum);
+            ps.setLong(3, Long.valueOf(pageSize));
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Topic topic= new Topic();
+                topic.setTopkind(rs.getString("topkind"));
+                topic.setTopname(rs.getString("topname"));
+                topic.setToptext(rs.getString("toptext"));
+                topic.setKtext(rs.getString("ktext"));
+                topic.setKname(rs.getString("kname"));
+                topic.setScore(rs.getString("score"));
+                topic.setSumscore(rs.getString("sumscore"));
+                topic.setSubmissions(rs.getString("submissions"));
+                topic.setDetails(rs.getString("details"));
+                topic.setOpinion(rs.getString("opinion"));
+                list.add(topic);
+            }
+        } catch(Exception e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            DBUtils.getInstance().close(rs);
+            DBUtils.getInstance().close(ps);
+            DBUtils.getInstance().close(conn);
+        }
+        return list;
+    }
+
+    @Override
+    public long getTestTopicTotal(String ttid) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        long count = 0;
+        try {
+            conn = DBUtils.getInstance().getConnection();
+            ps = conn.prepareStatement("select count(*) as total from testtopic,knowledge,score,submissions,details,topic " +
+                    "where  knowledge.kid=testtopic.kid and score.sid=testtopic.sid and " +
+                    "submissions.subid=testtopic.subid and details.did=testtopic.did and topic.topid=testtopic.topid and testtopic.ttid=?");
+            ps.setString(1, ttid);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getLong("total");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtils.getInstance().close(rs);
+            DBUtils.getInstance().close(ps);
+            DBUtils.getInstance().close(conn);
+        }
+        return count;
+    }
+
+    @Override
+    public List<SumScore> findStudentSumScore(String idOrName, String stid, long pageNum, String pageSize) {
+        Connection conn =null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<SumScore> list = new ArrayList<>();
+        try {
+            conn = DBUtils.getInstance().getConnection();
+            ps = conn.prepareStatement("select course.cid  as cid,cname,student.stid as stid,stname,uscore,uratio," +
+                    "hscore,hratio,escore,eratio,tscore,tratio,additionalscore,sumscore,classranking,graderanking  " +
+                    "from sumscore,student,course where student.stid=sumscore.stid and course.cid=sumscore.cid and student.stid=? " +
+                    "and (course.cid=? or course.cname like concat('%',?,'%')) limit ?,?");
+            ps.setString(1,stid );
+            ps.setString(2,idOrName );
+            ps.setString(3,idOrName );
+            ps.setLong(4, pageNum);
+            ps.setLong(5, Long.valueOf(pageSize));
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                SumScore sumScore=new SumScore();
+                sumScore.setCid(rs.getString("cid"));
+                sumScore.setCname(rs.getString("cname"));
+                sumScore.setStid(rs.getString("stid"));
+                sumScore.setStname(rs.getString("stname"));
+                sumScore.setUscore(rs.getString("uscore"));
+                sumScore.setUratio(rs.getString("uratio"));
+                sumScore.setHscore(rs.getString("hscore"));
+                sumScore.setHratio(rs.getString("hratio"));
+                sumScore.setEscore(rs.getString("escore"));
+                sumScore.setEratio(rs.getString("eratio"));
+                sumScore.setTscore(rs.getString("tscore"));
+                sumScore.setTratio(rs.getString("tratio"));
+                sumScore.setAdditionalscore(rs.getString("additionalscore"));
+                sumScore.setSumscore(rs.getString("sumscore"));
+                sumScore.setClassranking(rs.getString("classranking"));
+                sumScore.setGraderanking(rs.getString("graderanking"));
+                list.add(sumScore);
+            }
+        } catch(Exception e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            DBUtils.getInstance().close(rs);
+            DBUtils.getInstance().close(ps);
+            DBUtils.getInstance().close(conn);
+        }
+        return list;
+    }
+
+    @Override
+    public long getSumScoreTotal(String idOrName, String stid) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        long count = 0;
+        try {
+            conn = DBUtils.getInstance().getConnection();
+            ps = conn.prepareStatement("select count(*) as total from sumscore,student,course where student.stid=sumscore.stid " +
+                    "and course.cid=sumscore.cid and student.stid=? and (course.cid=? or course.cname like concat('%',?,'%'))");
+            ps.setString(1,stid );
+            ps.setString(2,idOrName );
+            ps.setString(3,idOrName );
             rs = ps.executeQuery();
             if (rs.next()) {
                 count = rs.getLong("total");

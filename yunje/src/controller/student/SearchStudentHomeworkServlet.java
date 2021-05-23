@@ -2,7 +2,7 @@ package controller.student;
 
 import bean.PageInfos;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import service.StudentHomeworkServie;
+import service.Student.StudentHomeworkServie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +21,8 @@ public class SearchStudentHomeworkServlet extends HttpServlet {
             request.setCharacterEncoding("utf-8");
             response.setCharacterEncoding("utf-8");
             response.setContentType("application/json;charset=utf-8");
-            String idOrName=request.getParameter("idOrName");
-            String stid=request.getParameter("stid");
+            String idOrName=request.getParameter("cIdOrName");
+            String stid=request.getParameter("stIdOrName");
             String pageNum=request.getParameter("pageNum");
             String pageSize=request.getParameter("pageSize");
             StudentHomeworkServie servie=new StudentHomeworkServie();

@@ -11,6 +11,24 @@ public class Test {
     private String classranking;
     private String graderanking;
     private String ratio;
+    private String ttid;
+    private String cla;
+
+    public String getCla() {
+        return cla;
+    }
+
+    public void setCla(String cla) {
+        this.cla = cla;
+    }
+
+    public String getTtid() {
+        return ttid;
+    }
+
+    public void setTtid(String ttid) {
+        this.ttid = ttid;
+    }
 
     public String getClassranking() {
         return classranking;

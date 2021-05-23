@@ -13,6 +13,8 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
     <!-- api -->
     <script src="./api/index.js"></script>
+
+    <script src="./api/echarts.min.js"></script>
     <!--组件加载器-->
     <script src="https://unpkg.com/http-vue-loader"></script>
     <style>
@@ -78,6 +80,7 @@
                 <student-homework-manage v-if="menuActive== 2 "></student-homework-manage>
                 <student-experiment-manage v-if="menuActive== 3 "></student-experiment-manage>
                 <student-test-manage v-if="menuActive==4"></student-test-manage>
+                <student-sum-score-manage v-if="menuActive==5"></student-sum-score-manage>
                 <student-time-manage v-if="menuActive== 6 "></student-time-manage>
             </el-main>
         </el-container>
@@ -135,6 +138,7 @@
             studentTimeManage : 'url:./StudentTimeManage.vue',
             studentExperimentManage : 'url:./StudentExperimentManage.vue',
             studentTestManage: 'url:./StudentTestManage.vue',
+            studentSumScoreManage: 'url:./StudentSumScoreManage.vue',
     }
     })
 </script>

@@ -5,6 +5,7 @@ public class Usual {
     private String cname;
     private String stid;
     private String stname;
+    private String cla;
     private String score;
     private String sumscore;
     private String classavgscore;
@@ -13,6 +14,14 @@ public class Usual {
     private String graderanking;
     private String details;
     private String opinion;
+
+    public String getCla() {
+        return cla;
+    }
+
+    public void setCla(String cla) {
+        this.cla = cla;
+    }
 
     public String getCid() {
         return cid;

@@ -6,6 +6,7 @@ public class Experiment {
     private String stid;
     private String stname;
     private String score;
+    private String cla;
     private String sumscore;
     private String details;
     private String opinion;
@@ -16,6 +17,14 @@ public class Experiment {
     private String graderanking;
     private String submissions;
     private String sumsubmissions;
+
+    public String getCla() {
+        return cla;
+    }
+
+    public void setCla(String cla) {
+        this.cla = cla;
+    }
 
     public String getCid() {
         return cid;

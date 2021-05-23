@@ -9,6 +9,33 @@ public class OnlineTime {
     private String sumtime;
     private String submissions;
     private String sumsubmissions;
+    private String cid;
+    private String cname;
+    private String cla;
+
+    public String getCid() {
+        return cid;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public String getCla() {
+        return cla;
+    }
+
+    public void setCla(String cla) {
+        this.cla = cla;
+    }
 
     public String getSumtime() {
         return sumtime;

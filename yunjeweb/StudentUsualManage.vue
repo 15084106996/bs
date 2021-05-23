@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="studentUsualHeader">
-            <el-input  v-model="paramsObj.idOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <div>
@@ -103,8 +103,8 @@
                 paramsObj:{
                     pageNum : 0,
                     pageSize : 8,
-                    idOrName : '',
-                    stid : JSON.parse(window.sessionStorage.getItem("loginStudent")).stid,
+                    cIdOrName : '',
+                    stIdOrName : JSON.parse(window.sessionStorage.getItem("loginStudent")).stid,
                 },
                 studentUsualInfos: [],//教师信息
             }

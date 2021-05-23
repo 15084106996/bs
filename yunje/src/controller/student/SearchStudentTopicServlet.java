@@ -2,8 +2,7 @@ package controller.student;
 
 import bean.PageInfos;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import service.StudentHomeworkServie;
-import service.StudentTopicServie;
+import service.Student.StudentTopicServie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="./api/echarts.min.js"></script>
+    <style>
+        #box div{
+            display:inline-block
+        }
+    </style>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="box">
+     <div id="main" style="width: 600px;height:400px;"></div>
+     <div id="main1" style="width: 600px;height:400px;"></div>
+     <div id="main2" style="width: 600px;height:400px;"></div>
+     <div id="main3" style="width: 600px;height:400px;"></div>
+</div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+    // 指定图表的配置项和数据
+    option = {
+        title: {
+            text: '作业分析图'
+        },
+        legend: {
+            data: ['实际分数', '平均分数']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '作业一', max: 100},
+                { name: '作业二', max: 100},
+                { name: '作业三', max: 100},
+                { name: '作业四', max: 100},
+                { name: '作业五', max: 100},
+            ]
+        },
+        series: [{
+            name: '实际 vs 平均',
+            type: 'radar',
+            data: [
+                {
+                    value: [70, 80, 85, 60, 90],
+                    name: '实际分数'
+                },
+                {
+                    value: [85, 70, 65, 83, 60],
+                    name: '平均分数'
+                }
+            ]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    option && myChart.setOption(option);
+    var chartDom1 = document.getElementById('main1');
+    var myChart1 = echarts.init(chartDom1);
+    var option1;
+    // 指定图表的配置项和数据
+    option1 = {
+        title: {
+            text: '实验分析图'
+        },
+        legend: {
+            data: ['实际分数', '平均分数']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '实验一', max: 100},
+                { name: '实验二', max: 100},
+                { name: '实验三', max: 100},
+                { name: '实验四', max: 100},
+            ]
+        },
+        series: [{
+            name: '实际 vs 平均',
+            type: 'radar',
+            data: [
+                {
+                    value: [70, 80, 85, 60],
+                    name: '实际分数'
+                },
+                {
+                    value: [85, 70, 65, 83],
+                    name: '平均分数'
+                }
+            ]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    option1 && myChart1.setOption(option1);
+    var chartDom2 = document.getElementById('main2');
+    var myChart2 = echarts.init(chartDom2);
+    var option2;
+    // 指定图表的配置项和数据
+    option2 = {
+        title: {
+            text: '考试分析图'
+        },
+        legend: {
+            data: ['实际分数', '平均分数']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '第一次考试', max: 100},
+                { name: '第二次考试', max: 100},
+                { name: '第三次考试', max: 100},
+                { name: '第四次考试', max: 100},
+                { name: '期末考试', max: 100},
+                { name: '总分', max: 100},
+            ]
+        },
+        series: [{
+            name: '实际 vs 平均',
+            type: 'radar',
+            data: [
+                {
+                    value: [70, 80, 85, 60, 90, 80],
+                    name: '实际分数'
+                },
+                {
+                    value: [85, 70, 65, 83, 60, 90],
+                    name: '平均分数'
+                }
+            ]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    option2 && myChart2.setOption(option2);
+    var chartDom3 = document.getElementById('main3');
+    var myChart3 = echarts.init(chartDom3);
+    var option3;
+    // 指定图表的配置项和数据
+    option3 = {
+        title: {
+            text: '总分分析图'
+        },
+        legend: {
+            data: ['实际分数', '平均分数']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '平时', max: 100},
+                { name: '作业', max: 100},
+                { name: '实验', max: 100},
+                { name: '考试', max: 100},
+                { name: '总分', max: 100},
+            ]
+        },
+        series: [{
+            name: '实际 vs 平均',
+            type: 'radar',
+            data: [
+                {
+                    value: [70, 80, 85, 60, 90],
+                    name: '实际分数'
+                },
+                {
+                    value: [85, 70, 65, 83, 60,],
+                    name: '平均分数'
+                }
+            ]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    option3 && myChart3.setOption(option3);
+</script>
+</body>
+</html>

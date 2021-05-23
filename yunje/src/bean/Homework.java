@@ -11,6 +11,16 @@ public class Homework {
     private String graderanking;
     private String htid;
     private String kind;
+    private String cla;
+
+    public String getCla() {
+        return cla;
+    }
+
+    public void setCla(String cla) {
+        this.cla = cla;
+    }
+
     public String getHtid() {
         return htid;
     }

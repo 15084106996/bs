@@ -2,7 +2,7 @@ package controller.student;
 
 import bean.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import service.StudentTimeServie;
+import service.Student.StudentTimeServie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,11 +21,12 @@ public class SearchStudentTimeServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
-        String stid=request.getParameter("stid");
+        String stid=request.getParameter("stIdOrName");
+        String idOrName=request.getParameter("cIdOrName");
         String pageNum=request.getParameter("pageNum");
         String pageSize=request.getParameter("pageSize");
         StudentTimeServie servie=new StudentTimeServie();
-        PageInfos pageInfos=servie.findStudentTime(stid,pageNum,pageSize);
+        PageInfos pageInfos=servie.findStudentTime(stid,idOrName,pageNum,pageSize);
         response.getWriter().println(new ObjectMapper().writeValueAsString(pageInfos));
     }
 }

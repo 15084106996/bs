@@ -11,9 +11,9 @@ public interface StudentDao {
 
     long getUsualTotal(String idOrName, String stid);
 
-    List<OnlineTime> findStudentTime(String stid, long pageNum, String pageSize);
+    List<OnlineTime> findStudentTime(String idOrName, String stid, long pageNum, String pageSize);
 
-    long getTimeTotal(String stid);
+    long getTimeTotal(String idOrName, String stid);
 
     List<Homework> findStudentHomework(String s, String stid, long pageNum, String pageSize);
 
@@ -30,4 +30,12 @@ public interface StudentDao {
     List<Test> findStudentTest(String idOrName, String stid, long pageNum, String pageSize);
 
     long getTestTotal(String idOrName, String stid);
+
+    List<Topic> findStudentTestTopic(String ttid, long pageNum, String pageSize);
+
+    long getTestTopicTotal(String ttid);
+
+    List<SumScore> findStudentSumScore(String idOrName, String stid, long pageNum, String pageSize);
+
+    long getSumScoreTotal(String idOrName, String stid);
 }

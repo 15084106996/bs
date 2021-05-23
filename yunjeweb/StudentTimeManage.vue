@@ -1,11 +1,28 @@
 <template>
     <div>
+
+
+    <div class="studentTimeHeader">
+        <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
+        <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
+    </div>
+    <div>
         <el-tag style="margin-bottom: 10px">学生在线时长</el-tag>
         <el-table
                 :data="studentTimeInfos"
                 height="250"
                 border
                 style="width: 100%">
+            <el-table-column
+                    width="100"
+                    prop="cid"
+                    label="课程编号">
+            </el-table-column>
+            <el-table-column
+                        width="100"
+                        prop="cname"
+                        label="课程姓名">
+            </el-table-column>
             <el-table-column
                     width="100"
                     prop="stid"
@@ -46,6 +63,7 @@
                 :total="total">
         </el-pagination>
     </div>
+    </div>
 </template>
 <script>
     module.exports= {
@@ -53,10 +71,10 @@
             return {
                 total : 0,
                 paramsObj:{
-                    pageNum : 1,
+                    pageNum : 0,
                     pageSize : 8,
-                    idOrName : '',
-                    stid : JSON.parse(window.sessionStorage.getItem("loginStudent")).stid
+                    cIdOrName : '',
+                    stIdOrName : JSON.parse(window.sessionStorage.getItem("loginStudent")).stid
                 },
                 studentTimeInfos: [],//教师信息
             }
@@ -64,6 +82,10 @@
         methods:{
             currentChange(count){//分页回调
                 this.paramsObj.pageNum=count;
+                this.initstudentTimeInfos();
+            },
+            serchByIdOrName() { // 点击搜索
+                this.paramsObj.pageNum = 1;
                 this.initstudentTimeInfos();
             },
             initstudentTimeInfos(){
@@ -80,3 +102,8 @@
         }
     }
 </script>
+<style scoped>
+    .studentTimeHeader{
+        margin: 10px 0;
+    }
+</style>

@@ -1,12 +1,13 @@
 <template>
     <div>
         <div class="studentHomeworkHeader">
-            <el-input  v-model="paramsObj.idOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <div>
             <el-tag style="margin-bottom: 10px">学生作业成绩</el-tag>
-            <el-button  @click=handle2 size="small" type="primary">学生作业掌握程度</el-button>
+            <el-button  @click="handle2()" size="small" type="primary">学生作业掌握程度</el-button>
+            <el-button @click="handle3()" size="small" type="primary">学生作业掌握程度雷达图</el-button>
             <el-table
                     :data="studentHomeworkInfos"
                     height="400"
@@ -74,7 +75,6 @@
                     :total="total">
             </el-pagination>
         </div>
-
         <el-dialog
             title="详情"
             :visible.sync="dialogVisible"
@@ -120,11 +120,9 @@
                 </el-table-column>
             </el-table>
             </div>
-
             <div class="studentTopic">
                 <el-button type="info" plain @click="dialogVisible2 = true">本次作业各知识点掌握情况</el-button>
             </div>
-
         <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -165,26 +163,26 @@
                 :visible.sync="dialogVisible2"
                 width="60%"
                 :before-close="handleClose">
-                <span class="studentTopic">
+                <span >
                     知识点一：
                 </span>
-                <el-progress :text-inside="true" :stroke-width="26" :percentage="70" status="success"></el-progress>
-                <span class="studentTopic">
+                <el-progress class="studentTopic" :text-inside="true" :stroke-width="26" :percentage="70" status="success"></el-progress>
+                <span >
                     知识点二：
                 </span>
-                <el-progress :text-inside="true" :stroke-width="24" :percentage="80" status="success"></el-progress>
-                <span class="studentTopic">
+                <el-progress class="studentTopic" :text-inside="true" :stroke-width="24" :percentage="80" status="success"></el-progress>
+                <span >
                     知识点三：
                 </span>
-                <el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
+                <el-progress class="studentTopic" :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
                 <span class="studentTopic">
                     知识点四：
                 </span>
-                <el-progress :text-inside="true" :stroke-width="20" :percentage="65" status="exception"></el-progress>
-                <span class="studentTopic">
+                <el-progress class="studentTopic" :text-inside="true" :stroke-width="20" :percentage="65" status="exception"></el-progress>
+                <span >
                     知识点五：
                 </span>
-                <el-progress :text-inside="true" :stroke-width="20" :percentage="70" status="success"></el-progress>
+                <el-progress class="studentTopic" :text-inside="true" :stroke-width="20" :percentage="70" status="success"></el-progress>
                 <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible2 = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible2 = false">确 定</el-button>
@@ -195,22 +193,22 @@
                 :visible.sync="dialogVisible3"
                 width="60%"
                 :before-close="handleClose">
-                <span class="studentTopic">
+                <span >
                     作业一：
                 </span>
-            <el-progress :text-inside="true" :stroke-width="26" :percentage="73" status="success"></el-progress>
-            <span class="studentTopic">
+            <el-progress class="studentHomework" :text-inside="true" :stroke-width="26" :percentage="73" status="success"></el-progress>
+            <span >
                     作业二：
                 </span>
-            <el-progress :text-inside="true" :stroke-width="24" :percentage="65" status="exception"></el-progress>
-            <span class="studentTopic">
+            <el-progress class="studentHomework" :text-inside="true" :stroke-width="24" :percentage="65" status="exception"></el-progress>
+            <span >
                     作业三：
                 </span>
-            <el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
-            <span class="studentTopic">
+            <el-progress class="studentHomework" :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
+            <span >
                     作业四：
                 </span>
-            <el-progress :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
+            <el-progress class="studentHomework" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
             <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible3 = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible3 = false">确 定</el-button>
@@ -230,9 +228,9 @@
                 paramsObj:{
                     pageNum : 0,
                     pageSize : 8,
-                    idOrName : '',
+                    cIdOrName : '',
                     htid : 0,
-                    stid : JSON.parse(window.sessionStorage.getItem("loginStudent")).stid,
+                    stIdOrName : JSON.parse(window.sessionStorage.getItem("loginStudent")).stid,
                 },
                 topic:{
                     topkind: '',
@@ -264,6 +262,9 @@
                 Object.assign(this.topic,row);
                 this.dialogVisible3=true;
             },
+            handle3(){
+                window.location.href='./StudentHomework.html'
+            },
             currentChange(count){//分页回调
                 this.paramsObj.pageNum=count;
                 this.initstudentHomeworkInfos();
@@ -271,6 +272,9 @@
             serchByIdOrName() { // 点击搜索
                 this.paramsObj.pageNum = 1;
                 this.initstudentHomeworkInfos();
+            },
+            handle3(){
+                window.location.href='./StudentHomework.html'
             },
             initstudentHomeworkInfos(){
                 getRequest('http://localhost:8080/searchStudentHomework',this.paramsObj).then(resp=>{
@@ -286,7 +290,7 @@
                         this.studentTopicInfos=resp.data.data;
                     }
                 })
-            }
+            },
         },
         mounted(){
             this.initstudentHomeworkInfos()
@@ -296,6 +300,9 @@
 </script>
 <style scoped>
     .studentHomeworkHeader{
+        margin: 10px 0;
+    }
+    .studentHomework{
         margin: 10px 0;
     }
     .studentTopic{
