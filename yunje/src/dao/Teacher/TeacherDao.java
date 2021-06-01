@@ -34,4 +34,8 @@ public interface TeacherDao {
     List<Kind> findTeacherKind(String cIdOrName, String stIdOrName, long pageNum, String pageSize);
 
     long getKindTotal(String cIdOrName, String stIdOrName);
+
+    List<Topic> findTeacherTopic(String htid, long pageNum, String pageSize);
+
+    long getTopicTotal(String htid);
 }

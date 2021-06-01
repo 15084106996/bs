@@ -24,11 +24,6 @@
                 </el-table-column>
                 <el-table-column
                         width="100"
-                        prop="cla"
-                        label="班级">
-                </el-table-column>
-                <el-table-column
-                        width="100"
                         prop="stid"
                         label="学生学号">
                 </el-table-column>
@@ -36,6 +31,11 @@
                         width="100"
                         prop="stname"
                         label="学生姓名">
+                </el-table-column>
+                <el-table-column
+                        width="100"
+                        prop="cla"
+                        label="班级">
                 </el-table-column>
                 <el-table-column
                         width="100"

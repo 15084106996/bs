@@ -58,11 +58,7 @@
                     prop="graderanking"
                     label="年级排名">
             </el-table-column>
-            <el-table-column
-                    width="100"
-                    prop="submissions"
-                    label="提交次数">
-            </el-table-column>
+
             <el-table-column label="操作" width="180" fixed="right">
                 <template slot-scope="scope">
                     <el-button

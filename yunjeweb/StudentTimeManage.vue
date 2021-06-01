@@ -19,7 +19,7 @@
                     label="课程编号">
             </el-table-column>
             <el-table-column
-                        width="100"
+                        width="180"
                         prop="cname"
                         label="课程姓名">
             </el-table-column>
@@ -34,24 +34,24 @@
                     label="学生姓名">
             </el-table-column>
             <el-table-column
-                    width="180"
-                    prop="logintime"
-                    label="登录">
+                    width="140"
+                    prop="submissions"
+                    label="提交次数">
             </el-table-column>
             <el-table-column
-                    width="180"
-                    prop="logouttime"
-                    label="退出时间">
+                    width="140"
+                    prop="avgsubmissions"
+                    label="平均提交次数">
             </el-table-column>
             <el-table-column
-                width="100"
-                prop="onlinetime"
+                width="140"
+                prop="sumtime"
                 label="在线时长">
             </el-table-column>
             <el-table-column
-                    width="100"
-                    prop="submissions"
-                    label="提交次数">
+                    width="140"
+                    prop="avgtime"
+                    label="平均在线时长">
             </el-table-column>
         </el-table>
         <el-pagination

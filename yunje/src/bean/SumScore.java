@@ -15,9 +15,54 @@ public class SumScore {
     private String tratio;
     private String additionalscore;
     private String sumscore;
+    private String ssumscore;
     private String classranking;
     private String graderanking;
     private String cla;
+    private String classavgscore;
+    private String gradeavgscore;
+    private String details;
+    private String opinion;
+
+    public String getClassavgscore() {
+        return classavgscore;
+    }
+
+    public void setClassavgscore(String classavgscore) {
+        this.classavgscore = classavgscore;
+    }
+
+    public String getGradeavgscore() {
+        return gradeavgscore;
+    }
+
+    public void setGradeavgscore(String gradeavgscore) {
+        this.gradeavgscore = gradeavgscore;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getOpinion() {
+        return opinion;
+    }
+
+    public void setOpinion(String opinion) {
+        this.opinion = opinion;
+    }
+
+    public String getSsumscore() {
+        return ssumscore;
+    }
+
+    public void setSsumscore(String ssumscore) {
+        this.ssumscore = ssumscore;
+    }
 
     public String getCla() {
         return cla;

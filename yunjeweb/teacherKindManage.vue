@@ -24,12 +24,17 @@
             <el-table-column
                     width="100"
                     prop="stid"
-                    label="学生id">
+                    label="学生学号">
             </el-table-column>
             <el-table-column
                     width="100"
                     prop="stname"
                     label="学生姓名">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="cla"
+                    label="班级">
             </el-table-column>
             <el-table-column
                     width="180"
@@ -38,6 +43,16 @@
                     <el-tag type="success" v-if="scope.row.kid">学习状态良好</el-tag>
                     <el-tag type="danger" v-else>学生状态有问题</el-tag>
                 </template>
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="score"
+                    label="学生分数">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="sumscore"
+                    label="总分">
             </el-table-column>
             <el-table-column label="操作" width="180" fixed="right">
                 <template slot-scope="scope">
@@ -64,6 +79,21 @@
                 width="60%"
                 :before-close="handleClose">
             <el-form ref="form" :model="topic" label-width="80px">
+                <el-form-item label="学生分数">
+                    <el-input v-model="topic.score" readonly></el-input>
+                </el-form-item>
+                <el-form-item label="班级平均">
+                    <el-input v-model="topic.classavgscore" readonly></el-input>
+                </el-form-item>
+                <el-form-item label="年级平均">
+                    <el-input v-model="topic.gradeavgscore" readonly></el-input>
+                </el-form-item>
+                <el-form-item label="班级排名">
+                    <el-input  v-model="topic.classranking" readonly></el-input>
+                </el-form-item>
+                <el-form-item label="年级排名">
+                    <el-input  v-model="topic.graderanking" readonly></el-input>
+                </el-form-item>
                 <el-form-item label="学习情况">
                     <el-input type="textarea" v-model="topic.details" readonly></el-input>
                 </el-form-item>
@@ -92,13 +122,19 @@
                 },
                 teacherKindInfos: [],//教师信息
                 topic:{
-                    cid :'',
-                    cname :'',
-                    stid :'',
-                    stname :'',
-                    kid :'',
-                    details :'',
+                    cid : '',
+                    cname : '',
+                    stid : '',
+                    stname : '',
+                    kid : '',
+                    details : '',
                     opinion :'',
+                    score :'',
+                    sumscore :'',
+                    classavgscore :'',
+                    gradeavgscore :'',
+                    classranking :'',
+                    graderanking :'',
                 }
             }
         },

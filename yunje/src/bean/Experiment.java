@@ -16,7 +16,6 @@ public class Experiment {
     private String classranking;
     private String graderanking;
     private String submissions;
-    private String sumsubmissions;
 
     public String getCla() {
         return cla;
@@ -138,11 +137,4 @@ public class Experiment {
         this.submissions = submissions;
     }
 
-    public String getSumsubmissions() {
-        return sumsubmissions;
-    }
-
-    public void setSumsubmissions(String sumsubmissions) {
-        this.sumsubmissions = sumsubmissions;
-    }
 }

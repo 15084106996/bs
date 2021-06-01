@@ -36,6 +36,11 @@
                 </el-table-column>
                 <el-table-column
                         width="100"
+                        prop="cla"
+                        label="班级">
+                </el-table-column>
+                <el-table-column
+                        width="100"
                         prop="kind"
                         label="考试次数">
                 </el-table-column>

@@ -13,7 +13,7 @@ public interface StudentDao {
 
     List<OnlineTime> findStudentTime(String idOrName, String stid, long pageNum, String pageSize);
 
-    long getTimeTotal(String idOrName, String stid);
+    long getTimeTotal(String stid,String idOrName);
 
     List<Homework> findStudentHomework(String s, String stid, long pageNum, String pageSize);
 
