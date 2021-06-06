@@ -8,44 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d390558-be53-4a60-abdf-a3b9395c5902" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/Experiment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/Experiment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/Kind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/Kind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/OnlineTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/OnlineTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/SumScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/SumScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Student/StudentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Student/StudentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/service/Student/StudentTimeServie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/service/Student/StudentTimeServie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/service/Teacher/TeacherTopicServie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/yunje_war_exploded/WEB-INF/classes/service/Teacher/TeacherTopicServie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/bean/Experiment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/bean/Experiment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/bean/Kind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/bean/Kind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/bean/OnlineTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/bean/OnlineTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/bean/SumScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/bean/SumScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/dao/Student/StudentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/dao/Student/StudentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/dao/Teacher/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/dao/Teacher/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/dao/Teacher/TeacherDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/dao/Teacher/TeacherDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/service/Student/StudentTimeServie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/service/Student/StudentTimeServie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yunje/service/Teacher/TeacherTopicServie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yunje/service/Teacher/TeacherTopicServie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Experiment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Experiment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Kind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Kind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/OnlineTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/OnlineTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/SumScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/SumScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Student/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Student/StudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Student/StudentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Student/StudentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Teacher/TeacherDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Teacher/TeacherDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Teacher/TeacherDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Teacher/TeacherDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Student/StudentTimeServie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Student/StudentTimeServie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Teacher/TeacherTopicServie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Teacher/TeacherTopicServie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yunjeweb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/StudentExperiment.html" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/StudentExperiment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/StudentHomework.html" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/StudentHomework.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/StudentSumScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/StudentSumScore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/StudentSumScoreManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/StudentSumScoreManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/StudentTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/StudentTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/StudentTimeManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/StudentTimeManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/TeacherHomeworkManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/TeacherHomeworkManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/TeacherTimeManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/TeacherTimeManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunjeweb/teacherKindManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../yunjeweb/teacherKindManage.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -64,27 +27,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/Student/StudentDaoImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentExperimentServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="210" column="67" selection-start-line="210" selection-start-column="67" selection-end-line="210" selection-end-column="67" />
+            <state relative-caret-position="196">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/Homework.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#458#459#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentHomeworkServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="267">
               <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,129 +50,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/Experiment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
-              <folding>
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#1244#1245#0" expanded="true" />
-                <element signature="e#1278#1279#0" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
-                <element signature="e#1432#1433#0" expanded="true" />
-                <element signature="e#1466#1467#0" expanded="true" />
-                <element signature="e#1496#1497#0" expanded="true" />
-                <element signature="e#1542#1543#0" expanded="true" />
-                <element signature="e#1580#1581#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentExperimentServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/SumScore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-              <folding>
-                <element signature="e#740#741#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#848#849#0" expanded="true" />
-                <element signature="e#888#889#0" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
-                <element signature="e#982#983#0" expanded="true" />
-                <element signature="e#1032#1033#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
-                <element signature="e#1096#1097#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1214#1215#0" expanded="true" />
-                <element signature="e#1244#1245#0" expanded="true" />
-                <element signature="e#1290#1291#0" expanded="true" />
-                <element signature="e#1328#1329#0" expanded="true" />
-                <element signature="e#576#577#0" expanded="true" />
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/Teacher/TeacherDaoImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/teacher/SearchTeacherSumScoreServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="172">
-              <caret line="234" column="59" lean-forward="true" selection-start-line="234" selection-start-column="59" selection-end-line="234" selection-end-column="59" />
+              <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bean/Kind.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding>
-                <element signature="e#485#486#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
-                <element signature="e#541#542#0" expanded="true" />
-                <element signature="e#576#577#0" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#695#696#0" expanded="true" />
-                <element signature="e#735#736#0" expanded="true" />
-                <element signature="e#771#772#0" expanded="true" />
-                <element signature="e#829#830#0" expanded="true" />
-                <element signature="e#879#880#0" expanded="true" />
-                <element signature="e#919#920#0" expanded="true" />
-                <element signature="e#955#956#0" expanded="true" />
-                <element signature="e#1013#1014#0" expanded="true" />
-                <element signature="e#1063#1064#0" expanded="true" />
-                <element signature="e#1102#1103#0" expanded="true" />
-                <element signature="e#1137#1138#0" expanded="true" />
-                <element signature="e#1193#1194#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1280#1281#0" expanded="true" />
-                <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1371#1372#0" expanded="true" />
-                <element signature="e#1419#1420#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -319,10 +151,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="262" />
-    <option name="y" value="37" />
+    <option name="x" value="300" />
+    <option name="y" value="110" />
     <option name="width" value="1545" />
-    <option name="height" value="849" />
+    <option name="height" value="813" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -536,6 +368,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_36_yunje_3" />
+        <option name="JNDI_PORT" value="1098" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -597,6 +430,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.hello" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.hello" />
@@ -651,11 +488,13 @@
       <workItem from="1622194103189" duration="2382000" />
       <workItem from="1622385380528" duration="3401000" />
       <workItem from="1622444867118" duration="7934000" />
+      <workItem from="1622552445380" duration="444000" />
+      <workItem from="1622606073789" duration="646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139087000" />
+    <option name="totallyTimeSpent" value="139978000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -667,10 +506,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.16471355" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.16471355" />
       <window_info id="Structure" order="1" sideWeight="0.5014837" side_tool="true" weight="0.26407507" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -680,7 +519,7 @@
       <window_info id="Web" order="7" sideWeight="0.5014837" side_tool="true" weight="0.26407507" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49890432" visible="true" weight="0.38186812" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49890432" visible="true" weight="0.38186812" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1030,16 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/teacher/SearchTeacherSumScoreServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/filter/FilterA_CrossOrigin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1316,109 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentExperimentServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/Experiment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
-          <folding>
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-            <element signature="e#1432#1433#0" expanded="true" />
-            <element signature="e#1466#1467#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/SumScore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1032#1033#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/Homework.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentHomeworkServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/Student/StudentDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="210" column="67" selection-start-line="210" selection-start-column="67" selection-end-line="210" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/Kind.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1457,8 +1183,113 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/Teacher/TeacherDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="229" column="59" lean-forward="true" selection-start-line="229" selection-start-column="59" selection-end-line="229" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/SumScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding>
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1142#1143#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/Experiment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+          <folding>
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1392#1393#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1466#1467#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bean/Homework.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/Student/StudentDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="210" column="67" selection-start-line="210" selection-start-column="67" selection-end-line="210" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentExperimentServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/student/SearchStudentHomeworkServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/teacher/SearchTeacherSumScoreServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
-          <caret line="234" column="59" lean-forward="true" selection-start-line="234" selection-start-column="59" selection-end-line="234" selection-end-column="59" />
+          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

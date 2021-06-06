@@ -3,39 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c601060a-ae33-48c5-a505-357774b2f00c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../yunje/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/Kind.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/Kind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/OnlineTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/bean/OnlineTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Student/StudentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Student/StudentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/dao/Teacher/TeacherDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/service/Teacher/TeacherTopicServie.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/artifacts/yunje_war_exploded/WEB-INF/classes/service/Teacher/TeacherTopicServie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/production/yunje/bean/Kind.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/production/yunje/bean/Kind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/production/yunje/bean/OnlineTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/production/yunje/bean/OnlineTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/production/yunje/dao/Student/StudentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/production/yunje/dao/Student/StudentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/production/yunje/dao/Teacher/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/production/yunje/dao/Teacher/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/production/yunje/dao/Teacher/TeacherDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/production/yunje/dao/Teacher/TeacherDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/out/production/yunje/service/Teacher/TeacherTopicServie.class" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/out/production/yunje/service/Teacher/TeacherTopicServie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/src/bean/Kind.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/src/bean/Kind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/src/bean/OnlineTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/src/bean/OnlineTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/src/dao/Student/StudentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/src/dao/Student/StudentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/src/dao/Teacher/TeacherDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/src/dao/Teacher/TeacherDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/src/dao/Teacher/TeacherDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/src/dao/Teacher/TeacherDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yunje/src/service/Teacher/TeacherTopicServie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yunje/src/service/Teacher/TeacherTopicServie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentExperiment.html" beforeDir="false" afterPath="$PROJECT_DIR$/StudentExperiment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentExperimentManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/StudentExperimentManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentHomework.html" beforeDir="false" afterPath="$PROJECT_DIR$/StudentHomework.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentSumScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/StudentSumScore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentSumScoreManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/StudentSumScoreManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/StudentTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentTimeManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/StudentTimeManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeacherExperimentManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TeacherExperimentManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeacherHomeworkManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TeacherHomeworkManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeacherSumScoreManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TeacherSumScoreManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeacherTestManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TeacherTestManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeacherTimeManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TeacherTimeManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeacherUsualManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TeacherUsualManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teacherKindManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/teacherKindManage.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,6 +107,8 @@
       <workItem from="1622194128784" duration="1344000" />
       <workItem from="1622385397718" duration="3760000" />
       <workItem from="1622444884045" duration="7656000" />
+      <workItem from="1622552474236" duration="760000" />
+      <workItem from="1622606035630" duration="3471000" />
     </task>
     <servers />
   </component>
