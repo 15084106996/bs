@@ -10,6 +10,15 @@ public class OnlineTime {
     private String cname;
     private String cla;
     private String avgtime;
+    private String kind;
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
 
     public String getStid() {
         return stid;

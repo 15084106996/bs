@@ -6,13 +6,9 @@ public class SumScore {
     private String stid;
     private String stname;
     private String uscore;
-    private String uratio;
     private String hscore;
-    private String hratio;
     private String escore;
-    private String eratio;
     private String tscore;
-    private String tratio;
     private String additionalscore;
     private String sumscore;
     private String ssumscore;
@@ -128,13 +124,6 @@ public class SumScore {
         this.uscore = uscore;
     }
 
-    public String getUratio() {
-        return uratio;
-    }
-
-    public void setUratio(String uratio) {
-        this.uratio = uratio;
-    }
 
     public String getHscore() {
         return hscore;
@@ -144,13 +133,6 @@ public class SumScore {
         this.hscore = hscore;
     }
 
-    public String getHratio() {
-        return hratio;
-    }
-
-    public void setHratio(String hratio) {
-        this.hratio = hratio;
-    }
 
     public String getEscore() {
         return escore;
@@ -160,13 +142,6 @@ public class SumScore {
         this.escore = escore;
     }
 
-    public String getEratio() {
-        return eratio;
-    }
-
-    public void setEratio(String eratio) {
-        this.eratio = eratio;
-    }
 
     public String getTscore() {
         return tscore;
@@ -174,14 +149,6 @@ public class SumScore {
 
     public void setTscore(String tscore) {
         this.tscore = tscore;
-    }
-
-    public String getTratio() {
-        return tratio;
-    }
-
-    public void setTratio(String tratio) {
-        this.tratio = tratio;
     }
 
     public String getAdditionalscore() {

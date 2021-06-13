@@ -8,7 +8,6 @@ public class Topic {
     private String ktext;
     private String score;
     private String sumscore;
-    private String submissions;
     private String details;
     private String opinion;
 
@@ -67,15 +66,6 @@ public class Topic {
     public void setSumscore(String sumscore) {
         this.sumscore = sumscore;
     }
-
-    public String getSubmissions() {
-        return submissions;
-    }
-
-    public void setSubmissions(String submissions) {
-        this.submissions = submissions;
-    }
-
     public String getDetails() {
         return details;
     }

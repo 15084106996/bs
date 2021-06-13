@@ -1,7 +1,6 @@
 package controller.teacher;
 
 import bean.PageInfos;
-import bean.Teacher;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import service.Teacher.TeacherSumScoreServie;
 

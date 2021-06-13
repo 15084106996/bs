@@ -2,7 +2,7 @@
     <div>
         <div class="studentKindHeader">
             <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
-            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生id或名称..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生学号或名称..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <el-tag style="margin-bottom: 10px">学生分类</el-tag>
@@ -53,6 +53,26 @@
                     width="100"
                     prop="sumscore"
                     label="总分">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="classavgscore"
+                    label="班级平均">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="classranking"
+                    label="班级排名">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="gradeavgscore"
+                    label="年级平均">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="graderanking"
+                    label="年级排名">
             </el-table-column>
             <el-table-column label="操作" width="180" fixed="right">
                 <template slot-scope="scope">

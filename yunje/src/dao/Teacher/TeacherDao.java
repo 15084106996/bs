@@ -38,4 +38,8 @@ public interface TeacherDao {
     List<Topic> findTeacherTopic(String htid, long pageNum, String pageSize);
 
     long getTopicTotal(String htid);
+
+    List<Student> findStudent(long pageNum, String pageSize);
+
+    long getStudentTotal();
 }

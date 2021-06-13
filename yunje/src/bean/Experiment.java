@@ -15,7 +15,24 @@ public class Experiment {
     private String kind;
     private String classranking;
     private String graderanking;
-    private String submissions;
+    private String classavgscore;
+    private String gradeavgscore;
+
+    public String getClassavgscore() {
+        return classavgscore;
+    }
+
+    public void setClassavgscore(String classavgscore) {
+        this.classavgscore = classavgscore;
+    }
+
+    public String getGradeavgscore() {
+        return gradeavgscore;
+    }
+
+    public void setGradeavgscore(String gradeavgscore) {
+        this.gradeavgscore = gradeavgscore;
+    }
 
     public String getCla() {
         return cla;
@@ -127,14 +144,6 @@ public class Experiment {
 
     public void setGraderanking(String graderanking) {
         this.graderanking = graderanking;
-    }
-
-    public String getSubmissions() {
-        return submissions;
-    }
-
-    public void setSubmissions(String submissions) {
-        this.submissions = submissions;
     }
 
 }

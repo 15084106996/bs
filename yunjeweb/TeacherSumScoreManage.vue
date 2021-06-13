@@ -2,7 +2,7 @@
     <div>
         <div class="teacherSumScoreHeader">
             <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
-            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生id或姓名..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生学号或姓名..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <el-tag style="margin-bottom: 10px">学生总成绩</el-tag>
@@ -26,7 +26,7 @@
             <el-table-column
                     width="100"
                     prop="stid"
-                    label="学生id">
+                    label="学生学号">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -39,19 +39,9 @@
                     label="平时成绩">
             </el-table-column>
             <el-table-column
-                    width="140"
-                    prop="uratio"
-                    label="平时成绩比重">
-            </el-table-column>
-            <el-table-column
                     width="100"
                     prop="hscore"
                     label="作业成绩">
-            </el-table-column>
-            <el-table-column
-                    width="140"
-                    prop="hratio"
-                    label="作业成绩比重">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -59,19 +49,9 @@
                     label="实验成绩">
             </el-table-column>
             <el-table-column
-                    width="140"
-                    prop="eratio"
-                    label="实验成绩比重">
-            </el-table-column>
-            <el-table-column
                     width="100"
                     prop="tscore"
                     label="考试成绩">
-            </el-table-column>
-            <el-table-column
-                    width="140"
-                    prop="tratio"
-                    label="考试成绩比重">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -145,19 +125,19 @@
             <span >
                     平时成绩：
             </span>
-            <el-progress class="studentSumScore" :text-inside="true" :stroke-width="26" :percentage="73" status="success"></el-progress>
+            <el-progress class="teacherSumScore" :text-inside="true" :stroke-width="20" :percentage="80" status="success"></el-progress>
             <span >
                     作业成绩：
             </span>
-            <el-progress class="studentSumScore" :text-inside="true" :stroke-width="24" :percentage="65" status="exception"></el-progress>
+            <el-progress class="teacherSumScore" :text-inside="true" :stroke-width="20" :percentage="60" status="exception"></el-progress>
             <span >
                     实验成绩：
             </span>
-            <el-progress class="studentSumScore" :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
+            <el-progress class="teacherSumScore" :text-inside="true" :stroke-width="20" :percentage="70" status="success"></el-progress>
             <span >
                     考试成绩：
             </span>
-            <el-progress class="studentSumScore" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
+            <el-progress class="teacherSumScore" :text-inside="true" :stroke-width="20" :percentage="70" status="success"></el-progress>
             <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible = false">确 定</el-button>

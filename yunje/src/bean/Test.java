@@ -13,6 +13,24 @@ public class Test {
     private String ratio;
     private String ttid;
     private String cla;
+    private String classavgscore;
+    private String gradeavgscore;
+
+    public String getClassavgscore() {
+        return classavgscore;
+    }
+
+    public void setClassavgscore(String classavgscore) {
+        this.classavgscore = classavgscore;
+    }
+
+    public String getGradeavgscore() {
+        return gradeavgscore;
+    }
+
+    public void setGradeavgscore(String gradeavgscore) {
+        this.gradeavgscore = gradeavgscore;
+    }
 
     public String getCla() {
         return cla;

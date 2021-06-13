@@ -2,7 +2,7 @@
     <div>
         <div class="teacherTimeHeader">
             <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
-            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生id或姓名..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生学号或姓名..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <div>
@@ -36,6 +36,11 @@
                         width="100"
                         prop="cla"
                         label="班级">
+                </el-table-column>
+                <el-table-column
+                        width="100"
+                        prop="kind"
+                        label="作业次数">
                 </el-table-column>
                 <el-table-column
                         width="100"

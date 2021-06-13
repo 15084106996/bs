@@ -4,6 +4,33 @@ public class Teacher {
     private String tid;
     private String tname;
     private String password;
+    private String sex;
+    private String age;
+    private String workage;
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getWorkage() {
+        return workage;
+    }
+
+    public void setWorkage(String workage) {
+        this.workage = workage;
+    }
 
     public String getTid() {
         return tid;

@@ -2,7 +2,7 @@
     <div>
         <div class="teacherExperimentHeader">
             <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
-            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生id或名称..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生学号或名称..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <div>
@@ -56,14 +56,25 @@
                 </el-table-column>
                 <el-table-column
                         width="100"
+                        prop="classavgscore"
+                        label="班级平均">
+                </el-table-column>
+                <el-table-column
+                        width="100"
                         prop="classranking"
                         label="班级排名">
+                </el-table-column>
+                <el-table-column
+                        width="100"
+                        prop="gradeavgscore"
+                        label="年级平均">
                 </el-table-column>
                 <el-table-column
                         width="100"
                         prop="graderanking"
                         label="年级排名">
                 </el-table-column>
+
                 <el-table-column label="操作" width="180" fixed="right">
                     <template slot-scope="scope">
                         <el-button
@@ -113,19 +124,19 @@
                 <span >
                     实验一：
                 </span>
-            <el-progress class="teacherExperiment"  :text-inside="true" :stroke-width="26" :percentage="70" status="success"></el-progress>
+            <el-progress class="teacherExperiment"  :text-inside="true" :stroke-width="20" :percentage="73" status="exception"></el-progress>
             <span >
                     实验二：
                 </span>
-            <el-progress class="teacherExperiment" :text-inside="true" :stroke-width="24" :percentage="90" status="success"></el-progress>
+            <el-progress class="teacherExperiment" :text-inside="true" :stroke-width="20" :percentage="65" status="exception"></el-progress>
             <span >
                     实验三：
                 </span>
-            <el-progress  class="teacherExperiment" :text-inside="true" :stroke-width="22" :percentage="60" status="exception"></el-progress>
+            <el-progress  class="teacherExperiment" :text-inside="true" :stroke-width="20" :percentage="80" status="success"></el-progress>
             <span >
                     实验四：
                 </span>
-            <el-progress  class="teacherExperiment" :text-inside="true" :stroke-width="20" :percentage="80" status="success"></el-progress>
+            <el-progress  class="teacherExperiment" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
             <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible1 = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible1 = false">确 定</el-button>
@@ -155,6 +166,8 @@
                     cla:"",
                     classranking: "",
                     graderanking: "",
+                    classavgscore:"",
+                    gradeavgscore:"",
                     submissions: "",
                 },
                 paramsObj:{

@@ -50,8 +50,18 @@
             </el-table-column>
             <el-table-column
                     width="100"
+                    prop="classavgscore"
+                    label="班级平均">
+            </el-table-column>
+            <el-table-column
+                    width="100"
                     prop="classranking"
                     label="班级排名">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="gradeavgscore"
+                    label="年级平均">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -108,19 +118,19 @@
                 <span >
                     实验一：
                 </span>
-            <el-progress class="studentExperiment"  :text-inside="true" :stroke-width="26" :percentage="70" status="success"></el-progress>
+            <el-progress class="studentExperiment"  :text-inside="true" :stroke-width="20" :percentage="73" status="exception"></el-progress>
             <span >
                     实验二：
                 </span>
-            <el-progress class="studentExperiment" :text-inside="true" :stroke-width="24" :percentage="90" status="success"></el-progress>
+            <el-progress class="studentExperiment" :text-inside="true" :stroke-width="20" :percentage="65" status="exception"></el-progress>
             <span class="studentExperiment">
                     实验三：
                 </span>
-            <el-progress  class="studentExperiment" :text-inside="true" :stroke-width="22" :percentage="60" status="exception"></el-progress>
+            <el-progress  class="studentExperiment" :text-inside="true" :stroke-width="20" :percentage="80" status="success"></el-progress>
             <span >
                     实验四：
                 </span>
-            <el-progress  class="studentExperiment" :text-inside="true" :stroke-width="20" :percentage="80" status="success"></el-progress>
+            <el-progress  class="studentExperiment" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
             <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible1 = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible1 = false">确 定</el-button>

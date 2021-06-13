@@ -2,7 +2,7 @@
     <div>
         <div class="teacherTestHeader">
             <el-input  v-model="paramsObj.cIdOrName" placeholder="请输入课程编号或名称..." size="small" style="width: 350px"></el-input>
-            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生id或姓名..." size="small" style="width: 350px"></el-input>
+            <el-input  v-model="paramsObj.stIdOrName" placeholder="请输入学生学号或姓名..." size="small" style="width: 350px"></el-input>
             <el-button  @click="serchByIdOrName" size="small" icon="el-icon-search" type="primary">搜索</el-button>
         </div>
         <div>
@@ -56,18 +56,23 @@
                 </el-table-column>
                 <el-table-column
                         width="100"
+                        prop="classavgscore"
+                        label="班级平均">
+                </el-table-column>
+                <el-table-column
+                        width="100"
                         prop="classranking"
                         label="班级排名">
                 </el-table-column>
                 <el-table-column
                         width="100"
-                        prop="graderanking"
-                        label="年级排名">
+                        prop="gradeavgscore"
+                        label="年级平均">
                 </el-table-column>
                 <el-table-column
                         width="100"
-                        prop="ratio"
-                        label="占比">
+                        prop="graderanking"
+                        label="年级排名">
                 </el-table-column>
                 <el-table-column label="操作" width="180" fixed="right">
                     <template slot-scope="scope">
@@ -117,11 +122,6 @@
                             prop="sumscore"
                             label="总分">
                     </el-table-column>
-                    <el-table-column
-                            width="100"
-                            prop="submissions"
-                            label="提交次数">
-                    </el-table-column>
                     <el-table-column label="操作" width="180" fixed="right">
                         <template slot-scope="scope">
                             <el-button
@@ -131,9 +131,6 @@
                     </el-table-column>
                 </el-table>
             </div>
-            <div class="teacherTopic">
-                <el-button type="info" plain @click="dialogVisible2 = true">本次考试各知识点掌握情况</el-button>
-            </div>
             <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -141,63 +138,34 @@
         </el-dialog>
         <el-dialog
                 title="详情"
-                :visible.sync="dialogVisible2"
-                width="60%"
-                :before-close="handleClose">
-                <span >
-                    知识点一：
-                </span>
-            <el-progress class="teacherTopic" :text-inside="true" :stroke-width="26" :percentage="70" status="success"></el-progress>
-            <span >
-                    知识点二：
-                </span>
-            <el-progress class="teacherTopic" :text-inside="true" :stroke-width="24" :percentage="80" status="success"></el-progress>
-            <span >
-                    知识点三：
-                </span>
-            <el-progress class="teacherTopic" :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
-            <span >
-                    知识点四：
-                </span>
-            <el-progress class="teacherTopic" :text-inside="true" :stroke-width="20" :percentage="65" status="exception"></el-progress>
-            <span >
-                    知识点五：
-                </span>
-            <el-progress class="teacherTopic" :text-inside="true" :stroke-width="20" :percentage="70" status="success"></el-progress>
-            <span slot="footer" class="dialog-footer">
-                <el-button size="mini" @click="dialogVisible2 = false">取 消</el-button>
-                <el-button size="mini" type="primary" @click="dialogVisible2 = false">确 定</el-button>
-                </span>
-        </el-dialog>
-        <el-dialog
-                title="详情"
                 :visible.sync="dialogVisible3"
                 width="60%"
                 :before-close="handleClose">
-                <span >
-                    第一次考试：
-                </span>
-            <el-progress class="teacherTest" :text-inside="true" :stroke-width="26" :percentage="73" status="success"></el-progress>
-            <span >
-                    第二次考试：
-                </span>
-            <el-progress class="teacherTest" :text-inside="true" :stroke-width="24" :percentage="65" status="exception"></el-progress>
-            <span >
-                    第三次考试：
-                </span>
-            <el-progress class="teacherTest" :text-inside="true" :stroke-width="22" :percentage="80" status="success"></el-progress>
-            <span >
-                    第四次考试：
-                </span>
-            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
             <span >
                     期末考试：
                 </span>
+            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="70" status="exception"></el-progress>
+                <span >
+                    第一次考试：
+                </span>
             <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
+            <span >
+                    第二次考试：
+                </span>
+            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="60" status="exception"></el-progress>
+            <span >
+                    第三次考试：
+                </span>
+            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="80" status="exception"></el-progress>
+            <span >
+                    第四次考试：
+                </span>
+            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="85" status="success"></el-progress>
+
             <span >
                     总分：
                 </span>
-            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
+            <el-progress class="teacherTest" :text-inside="true" :stroke-width="20" :percentage="74.3" status="success"></el-progress>
             <span slot="footer" class="dialog-footer">
                 <el-button size="mini" @click="dialogVisible3 = false">取 消</el-button>
                 <el-button size="mini" type="primary" @click="dialogVisible3 = false">确 定</el-button>
@@ -290,9 +258,6 @@
         margin: 10px 0;
     }
     .teacherTest{
-        margin: 10px 0;
-    }
-    .teacherTopic{
         margin: 10px 0;
     }
 </style>

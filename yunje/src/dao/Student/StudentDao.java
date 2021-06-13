@@ -38,4 +38,5 @@ public interface StudentDao {
     List<SumScore> findStudentSumScore(String idOrName, String stid, long pageNum, String pageSize);
 
     long getSumScoreTotal(String idOrName, String stid);
+
 }

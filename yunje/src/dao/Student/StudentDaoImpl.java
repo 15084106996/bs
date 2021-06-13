@@ -27,6 +27,10 @@ public class StudentDaoImpl implements StudentDao {
                 student.setStid(rs.getString("stid"));
                 student.setStname(rs.getString("stname"));
                 student.setPassword(rs.getString("password"));
+                student.setCla(rs.getString("cla"));
+                student.setSex(rs.getString("sex"));
+                student.setAge(rs.getString("age"));
+                student.setGrade(rs.getString("grade"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +84,7 @@ public class StudentDaoImpl implements StudentDao {
                     "classavgscore,gradeavgscore,classranking,graderanking,details,opinion from usual, course,student,score," +
                     "ranking,avgscore,details where course.cid=usual.cid and student.stid=usual.stid and score.sid=usual.sid " +
                     "and ranking.rid=usual.rid and avgscore.avgid=usual.avgid and details.did=usual.did and student.stid=? " +
-                    "and(course.cid=? or course.cname like concat('%',?,'%')) limit ?,?");
+                    "and(course.cid=? or course.cname like concat('%',?,'%'))  limit ?,?");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
             ps.setString(3, idOrName);
@@ -149,7 +153,7 @@ public class StudentDaoImpl implements StudentDao {
         List<OnlineTime> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select student.stid as stid,stname,sumtime,avgtime,submissions,avgsubmissions,course.cid as cid,cname " +
+            ps = conn.prepareStatement("select student.stid as stid,stname,sumtime,avgtime,submissions,kind,avgsubmissions,course.cid as cid,cname " +
                     "from course,student,onlinetime,submissions where student.stid=onlinetime.stid and submissions.subid=onlinetime.subid and " +
                     "course.cid=onlinetime.cid and student.stid=?  and (course.cid=? or course.cname like concat('%',?,'%')) limit ?,?");
             ps.setString(1, stid);
@@ -168,6 +172,7 @@ public class StudentDaoImpl implements StudentDao {
                 onlineTime.setAvgsubmissions(rs.getString("avgsubmissions"));
                 onlineTime.setCid(rs.getString("cid"));
                 onlineTime.setCname(rs.getString("cname"));
+                onlineTime.setKind(rs.getString("kind"));
                 list.add(onlineTime);
             }
         } catch (Exception e) {
@@ -189,10 +194,11 @@ public class StudentDaoImpl implements StudentDao {
         List<Homework> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,kind,htid,score,sumscore,classranking,graderanking " +
-                    "from homework,course,student,score,ranking where course.cid=homework.cid and student.stid=homework.stid " +
-                    "and score.sid=homework.sid and ranking.rid=homework.rid and student.stid=? and (course.cid=? or " +
-                    "course.cname like concat('%',?,'%')) limit ?,? ");
+            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,kind,htid,score,sumscore," +
+                    "classranking,graderanking,classavgscore,gradeavgscore from homework,course,student,score,ranking,avgscore " +
+                    "where course.cid=homework.cid and student.stid=homework.stid and score.sid=homework.sid and ranking.rid=homework.rid " +
+                    "and avgscore.avgid=homework.avgid and student.stid=? and (course.cid=? or course.cname like concat('%',?,'%'))  " +
+                    "order by kind limit ?,?");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
             ps.setString(3, idOrName);
@@ -211,6 +217,8 @@ public class StudentDaoImpl implements StudentDao {
             homework.setGraderanking(rs.getString("graderanking"));
             homework.setHtid(rs.getString("htid"));
             homework.setKind(rs.getString("kind"));
+            homework.setClassavgscore(rs.getString("classavgscore"));
+            homework.setGradeavgscore(rs.getString("gradeavgscore"));
             list.add(homework);
         }
     } catch(
@@ -263,10 +271,10 @@ public class StudentDaoImpl implements StudentDao {
         List<Topic> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select topkind,topname,toptext,kname,ktext,score,sumscore,submissions,details,opinion" +
-                    " from homeworktopic,knowledge,score,submissions,details,topic " +
+            ps = conn.prepareStatement("select topkind,topname,toptext,kname,ktext,score,sumscore,details,opinion" +
+                    " from homeworktopic,knowledge,score,details,topic " +
                     "where knowledge.kid=homeworktopic.kid and score.sid=homeworktopic.sid " +
-                    "and submissions.subid=homeworktopic.subid and details.did=homeworktopic.did and topic.topid=homeworktopic.topid " +
+                    " and details.did=homeworktopic.did and topic.topid=homeworktopic.topid " +
                     "and homeworktopic.htid=? limit ?,?");
             ps.setString(1, htid);
             ps.setLong(2, pageNum);
@@ -281,7 +289,6 @@ public class StudentDaoImpl implements StudentDao {
                 topic.setKname(rs.getString("kname"));
                 topic.setScore(rs.getString("score"));
                 topic.setSumscore(rs.getString("sumscore"));
-                topic.setSubmissions(rs.getString("submissions"));
                 topic.setDetails(rs.getString("details"));
                 topic.setOpinion(rs.getString("opinion"));
                 list.add(topic);
@@ -306,9 +313,9 @@ public class StudentDaoImpl implements StudentDao {
         long count = 0;
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select count(*) as total from homeworktopic,homework,knowledge,score,submissions,details,topic" +
+            ps = conn.prepareStatement("select count(*) as total from homeworktopic,homework,knowledge,score,details,topic" +
                     " where knowledge.kid=homeworktopic.kid and score.sid=homeworktopic.sid " +
-                    "and submissions.subid=homeworktopic.subid and details.did=homeworktopic.did and topic.topid=homeworktopic.topid " +
+                    "and details.did=homeworktopic.did and topic.topid=homeworktopic.topid " +
                     "and homeworktopic.htid=?");
             ps.setString(1, htid);
             rs = ps.executeQuery();
@@ -334,11 +341,10 @@ public class StudentDaoImpl implements StudentDao {
         try {
             conn = DBUtils.getInstance().getConnection();
             ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,score,sumscore,details," +
-                    "opinion,ename,etext,kind,classranking,graderanking,submissions from experiment,experimentstudent," +
-                    "details,score,submissions,course,ranking,student where experimentstudent.eid=experiment.eid and " +
+                    "opinion,ename,etext,kind,classranking,graderanking,classavgscore,gradeavgscore from experiment,experimentstudent," +
+                    "details,score,course,ranking,student,avgscore where experimentstudent.eid=experiment.eid and " +
                     "experimentstudent.did=details.did and experimentstudent.sid=score.sid and experimentstudent.cid=course.cid " +
-                    "and experimentstudent.rid=ranking.rid and experimentstudent.subid=submissions.subid and e" +
-                    "xperimentstudent.stid=student.stid and student.stid=? and (course.cid=? or course.cname " +
+                    "and experimentstudent.rid=ranking.rid and experimentstudent.stid=student.stid and experimentstudent.avgid=avgscore.avgid and student.stid=? and (course.cid=? or course.cname " +
                     "like concat('%',?,'%')) limit ?,?");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
@@ -358,10 +364,11 @@ public class StudentDaoImpl implements StudentDao {
                 experiment.setOpinion(rs.getString("opinion"));
                 experiment.setClassranking(rs.getString("classranking"));
                 experiment.setGraderanking(rs.getString("graderanking"));
+                experiment.setClassavgscore(rs.getString("classavgscore"));
+                experiment.setGradeavgscore(rs.getString("gradeavgscore"));
                 experiment.setEname(rs.getString("ename"));
                 experiment.setEtext(rs.getString("etext"));
                 experiment.setKind(rs.getString("kind"));
-                experiment.setSubmissions(rs.getString("submissions"));
                 list.add(experiment);
             }
         } catch(Exception e)
@@ -384,10 +391,10 @@ public class StudentDaoImpl implements StudentDao {
         long count = 0;
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select count(*) as total from experiment,experimentstudent,details,score,submissions," +
+            ps = conn.prepareStatement("select count(*) as total from experiment,experimentstudent,details,score," +
                     "course,ranking,student where experimentstudent.eid=experiment.eid and experimentstudent.did=details.did " +
                     "and experimentstudent.sid=score.sid and experimentstudent.cid=course.cid and experimentstudent.rid=ranking.rid " +
-                    "and experimentstudent.subid=submissions.subid and experimentstudent.stid=student.stid " +
+                    "and experimentstudent.stid=student.stid " +
                     "and student.stid=? and (course.cid=? or course.cname like concat('%',?,'%')) ");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
@@ -414,10 +421,11 @@ public class StudentDaoImpl implements StudentDao {
         List<Test> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,test.ttid as ttid,kind,score," +
-                    "sumscore,classranking,graderanking,ratio from test,score,course,student,ranking where test.cid=course.cid " +
-                    "and test.sid=score.sid and test.stid=student.stid and test.rid=ranking.rid " +
-                    "and student.stid=? and (course.cid=? or course.cname like concat('%',?,'%')) limit ?,?");
+            ps = conn.prepareStatement("select course.cid as cid,cname,student.stid as stid,stname,test.ttid as ttid," +
+                    "kind,score,sumscore,classranking,graderanking,ratio,classavgscore,gradeavgscore from test,score,course," +
+                    "student,ranking,avgscore where test.cid=course.cid and test.sid=score.sid and test.stid=student.stid and " +
+                    "test.avgid=avgscore.avgid and test.rid=ranking.rid and student.stid=? and (course.cid=? or " +
+                    "course.cname like concat('%',?,'%')) limit ?,?");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
             ps.setString(3, idOrName);
@@ -432,11 +440,14 @@ public class StudentDaoImpl implements StudentDao {
                 test.setStname(rs.getString("stname"));
                 test.setKind(rs.getString("kind"));
                 test.setRatio(rs.getString("ratio"));
+                test.setGradeavgscore(rs.getString("gradeavgscore"));
                 test.setScore(rs.getString("score"));
                 test.setSumscore(rs.getString("sumscore"));
                 test.setClassranking(rs.getString("classranking"));
                 test.setGraderanking(rs.getString("graderanking"));
                 test.setTtid(rs.getString("ttid"));
+                test.setClassavgscore(rs.getString("classavgscore"));
+
                 list.add(test);
             }
         } catch(Exception e)
@@ -459,8 +470,8 @@ public class StudentDaoImpl implements StudentDao {
         long count = 0;
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select count(*) as total from test,score,course,student,ranking " +
-                    "where test.cid=course.cid and test.sid=score.sid and test.stid=student.stid and test.rid=ranking.rid " +
+            ps = conn.prepareStatement("select count(*) as total from test,score,course,student,ranking,avgscore" +
+                    "where test.cid=course.cid and test.sid=score.sid and test.avgid=test.avgid,and test.stid=student.stid and test.rid=ranking.rid " +
                     "and student.stid=? and (course.cid=? or course.cname like concat('%',?,'%'))");
             ps.setString(1, stid);
             ps.setString(2, idOrName);
@@ -487,9 +498,9 @@ public class StudentDaoImpl implements StudentDao {
         List<Topic> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select topkind,topname,toptext,kname,ktext,score,sumscore,submissions,details,opinion " +
-                    "from testtopic,knowledge,score,submissions,details,topic where " +
-                    "knowledge.kid=testtopic.kid and score.sid=testtopic.sid and submissions.subid=testtopic.subid and " +
+            ps = conn.prepareStatement("select topkind,topname,toptext,kname,ktext,score,sumscore,details,opinion " +
+                    "from testtopic,knowledge,score,details,topic where " +
+                    "knowledge.kid=testtopic.kid and score.sid=testtopic.sid and " +
                     "details.did=testtopic.did and topic.topid=testtopic.topid and testtopic.ttid=? limit ?,?");
             ps.setString(1, ttid);
             ps.setLong(2, pageNum);
@@ -504,7 +515,6 @@ public class StudentDaoImpl implements StudentDao {
                 topic.setKname(rs.getString("kname"));
                 topic.setScore(rs.getString("score"));
                 topic.setSumscore(rs.getString("sumscore"));
-                topic.setSubmissions(rs.getString("submissions"));
                 topic.setDetails(rs.getString("details"));
                 topic.setOpinion(rs.getString("opinion"));
                 list.add(topic);
@@ -529,9 +539,9 @@ public class StudentDaoImpl implements StudentDao {
         long count = 0;
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select count(*) as total from testtopic,knowledge,score,submissions,details,topic " +
+            ps = conn.prepareStatement("select count(*) as total from testtopic,knowledge,score,details,topic " +
                     "where  knowledge.kid=testtopic.kid and score.sid=testtopic.sid and " +
-                    "submissions.subid=testtopic.subid and details.did=testtopic.did and topic.topid=testtopic.topid and testtopic.ttid=?");
+                    " details.did=testtopic.did and topic.topid=testtopic.topid and testtopic.ttid=?");
             ps.setString(1, ttid);
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -555,8 +565,8 @@ public class StudentDaoImpl implements StudentDao {
         List<SumScore> list = new ArrayList<>();
         try {
             conn = DBUtils.getInstance().getConnection();
-            ps = conn.prepareStatement("select course.cid  as cid,cname,student.stid as stid,stname,uscore,uratio,hscore,hratio,escore," +
-                    "eratio,tscore,tratio,additionalscore,sumscore,ssumscore,classranking,graderanking,classavgscore,gradeavgscore,details," +
+            ps = conn.prepareStatement("select course.cid  as cid,cname,student.stid as stid,stname,uscore,hscore,escore," +
+                    "tscore,additionalscore,sumscore,ssumscore,classranking,graderanking,classavgscore,gradeavgscore,details," +
                     "opinion from sumscore,student,course,avgscore,ranking,details where ranking.rid=sumscore.rid and avgscore.avgid=sumscore.avgid and " +
                     "student.stid=sumscore.stid and details.did=sumscore.did and course.cid=sumscore.cid and student.stid=? and (course.cid=? or " +
                     "course.cname like concat('%',?,'%')) limit ?,?");
@@ -573,13 +583,9 @@ public class StudentDaoImpl implements StudentDao {
                 sumScore.setStid(rs.getString("stid"));
                 sumScore.setStname(rs.getString("stname"));
                 sumScore.setUscore(rs.getString("uscore"));
-                sumScore.setUratio(rs.getString("uratio"));
                 sumScore.setHscore(rs.getString("hscore"));
-                sumScore.setHratio(rs.getString("hratio"));
                 sumScore.setEscore(rs.getString("escore"));
-                sumScore.setEratio(rs.getString("eratio"));
                 sumScore.setTscore(rs.getString("tscore"));
-                sumScore.setTratio(rs.getString("tratio"));
                 sumScore.setAdditionalscore(rs.getString("additionalscore"));
                 sumScore.setSumscore(rs.getString("sumscore"));
                 sumScore.setClassranking(rs.getString("classranking"));

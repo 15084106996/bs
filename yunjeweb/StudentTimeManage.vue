@@ -10,7 +10,8 @@
         <el-tag style="margin-bottom: 10px">学生在线时长</el-tag>
         <el-table
                 :data="studentTimeInfos"
-                height="250"
+                height="400"
+                height="400"
                 border
                 style="width: 100%">
             <el-table-column
@@ -32,6 +33,11 @@
                     width="100"
                     prop="stname"
                     label="学生姓名">
+            </el-table-column>
+            <el-table-column
+                    width="100"
+                    prop="kind"
+                    label="作业次数">
             </el-table-column>
             <el-table-column
                     width="140"

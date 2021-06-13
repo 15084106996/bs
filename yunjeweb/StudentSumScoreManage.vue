@@ -25,7 +25,7 @@
             <el-table-column
                     width="100"
                     prop="stid"
-                    label="学生id">
+                    label="学生学号">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -38,19 +38,9 @@
                     label="平时成绩">
             </el-table-column>
             <el-table-column
-                    width="140"
-                    prop="uratio"
-                    label="平时成绩比重">
-            </el-table-column>
-            <el-table-column
                     width="100"
                     prop="hscore"
                     label="作业成绩">
-            </el-table-column>
-            <el-table-column
-                    width="140"
-                    prop="hratio"
-                    label="作业成绩比重">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -58,19 +48,9 @@
                     label="实验成绩">
             </el-table-column>
             <el-table-column
-                    width="140"
-                    prop="eratio"
-                    label="实验成绩比重">
-            </el-table-column>
-            <el-table-column
                     width="100"
                     prop="tscore"
                     label="考试成绩">
-            </el-table-column>
-            <el-table-column
-                    width="140"
-                    prop="tratio"
-                    label="考试成绩比重">
             </el-table-column>
             <el-table-column
                     width="100"
@@ -183,13 +163,9 @@
                     stid: '',
                     stname: '',
                     uscore: '',
-                    uratio: '',
                     hscore: '',
-                    hratio: '',
                     escore: '',
-                    eratio: '',
                     tscore: '',
-                    tratio: '',
                     additionalscore: '',
                     sumscore: '',
                     ssumscore: '',
